@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.technocredits.orghrm.testscripts.DashboardTest">
+      <class name="technocredits.screenShotCode.CapatureScreenShot">
         <methods>
-          <include name="verifyWidgetsTest"/>
+          <include name="capatureScreenShot"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.technocredits.orghrm.testscripts.DashboardTest -->
+      </class> <!-- technocredits.screenShotCode.CapatureScreenShot -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
