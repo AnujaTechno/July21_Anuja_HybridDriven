@@ -3,41 +3,20 @@ package com.technocredits.orghrm.testscripts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.technocredits.orghrm.base.PredefinedActions;
+import com.technocredits.Assignment14.testscripts.TestBase;
 import com.technocredits.orghrm.pages.DashboardPage;
-import com.technocredits.orghrm.pages.LoginPage;
 
 //import com.technocredits.orghrm.base.PredefinedActions;
-public class DashboardTest  {
+public class DashboardTest extends TestBase {
 	SoftAssert softAssert=new SoftAssert();
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
-		
-		//PredefinedActions p=new PredefinedActions();
-		System.out.println("Launch OrgHRM Application");
-		PredefinedActions.start();
-
-		System.out.println("Verify Logo displayed on Login Page");
-		LoginPage loginPage=new LoginPage();
-		boolean isLogoDisplayed=loginPage.isLogoDisplayed();
-		softAssert.assertTrue(isLogoDisplayed,"Logo was not displayed on Login Page");
-
-		System.out.println("Verify Login Panel displayed on Login Page");
-		boolean isLoginPanelDisplayed=loginPage.isLoginPanelDisplayed();
-		softAssert.assertTrue(isLoginPanelDisplayed,"Login Panel was not displayed on Login Page");
-
-		System.out.println("User able to enter username as \"\"your username\"\"");
-		loginPage.enterCredentials("Admin","1V@Ph1laXC");
-		System.out.println("User able to enter password as \"\"your password\"\"");
-		softAssert.assertAll();
-
-		System.out.println("Click on Login button");
-		loginPage.clickOnLoginButton();
+		super.setup();
 	}
 
 	@Test
@@ -77,8 +56,9 @@ public class DashboardTest  {
 		softAssert.assertTrue(actualWidgetsList.equals(expectedWidgetsList)); //will compare index by index of both lists
 	}
 	
-	@AfterMethod
+	@AfterClass
 	public void tearDown() {
-		PredefinedActions.closeBrowser();
+		//PredefinedActions.closeBrowser();
+		super.tearDown();
 	}
 }

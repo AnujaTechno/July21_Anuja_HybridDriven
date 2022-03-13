@@ -1,7 +1,9 @@
 package com.technocredits.orghrm.pages;
 
 import org.openqa.selenium.By;
-import com.technocredits.orghrm.base.*;
+
+import com.technocredits.Assignment14.base.PredefinedActions;
+import com.technocredits.Assignment14.pages.MenuPage;
 
 public class LoginPage extends PredefinedActions {
 	public boolean isLogoDisplayed() {
@@ -19,8 +21,9 @@ public class LoginPage extends PredefinedActions {
 		driver.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys(password);
 	}
 	
-	public void clickOnLoginButton() {
+	public MenuPage clickOnLoginButton() {
 		driver.findElement(By.xpath("//button[@type='submit']")).submit();
+		return new MenuPage();
 	}
 	
 	public String getLoginErrorMessage() {
